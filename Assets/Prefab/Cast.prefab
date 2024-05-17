@@ -119,8 +119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quality: 100
-  castingTime: 0
-  lifetime: 5
+  castingTime: 1
+  lifetime: 50
   element: {fileID: 4612387892239302211, guid: 9435087dde9c4431e8a8a7d679d8f052, type: 3}
   speed: 0
+  distance: 2
+  position: 100
   direction: 0

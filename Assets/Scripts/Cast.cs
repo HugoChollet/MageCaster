@@ -16,6 +16,8 @@ public class Cast : MonoBehaviour
     public Element element; // Element Object like Fire, water...
 
     public int speed;
+    public float distance = 1;
+    public int position = 0; // Position range from 0 - 360 degrees around the player
 
     public Direction direction = Direction.forward;
 
