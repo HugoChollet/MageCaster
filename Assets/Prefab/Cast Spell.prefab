@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6554105631091176789}
   - component: {fileID: 7711332063999613771}
   - component: {fileID: 2246396225859480282}
-  - component: {fileID: 7012888600406350564}
+  - component: {fileID: 7920643559669262410}
   m_Layer: 0
-  m_Name: Cast
+  m_Name: Cast Spell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7012888600406350564
+--- !u!114 &7920643559669262410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,14 +115,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3904506897044201125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c87d3d8223004e66963feb718a5be65, type: 3}
+  m_Script: {fileID: 11500000, guid: 2639ed68d43834ef497e0b8250aa9e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   quality: 100
   castingTime: 1
-  lifetime: 50
-  element: {fileID: 4612387892239302211, guid: 9435087dde9c4431e8a8a7d679d8f052, type: 3}
+  lifetime: 5
+  element: {fileID: 4612387892239302211, guid: 497af0d5a74a246d7913a1a7e791aaf5, type: 3}
   speed: 0
-  distance: 2
-  position: 100
+  distance: 1
+  anglePos: 0
   direction: 0
