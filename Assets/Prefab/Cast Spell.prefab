@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3904506897044201125}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300002, guid: cea7b4908e889df4ea1487e9f97c3c67, type: 3}
 --- !u!23 &7711332063999613771
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   quality: 100
   castingTime: 1
   lifetime: 5
+  manaCost: 0
   element: {fileID: 4612387892239302211, guid: 497af0d5a74a246d7913a1a7e791aaf5, type: 3}
   speed: 0
   distance: 1

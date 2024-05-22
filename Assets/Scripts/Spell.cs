@@ -26,10 +26,15 @@ public class Spell : Cast
     public override Vector3 determineSpawn()
     {
         Transform playerTransform = GameObject.FindGameObjectWithTag("CastingSpawn").transform;
+        Transform cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
+
+        Mesh mesh = GetComponent<MeshFilter>().sharedMesh;
+        // The extents of the Bounding Box. This is always half of the size of the Bounds.
+        float spellSize = mesh.bounds.extents.z * transform.localScale.z;
 
         // Calculate the spawn position around the player
-        Quaternion rotation = Quaternion.Euler(0, anglePos, 0);
-        Vector3 distanceFromPlayer = rotation * playerTransform.forward * distance;
+        Quaternion rotAroundPlayer = Quaternion.Euler(0, anglePos, 0);
+        Vector3 distanceFromPlayer = rotAroundPlayer * cameraTransform.forward * (distance + spellSize);
         Vector3 spawnPosition = playerTransform.position + distanceFromPlayer;
 
         return spawnPosition;
@@ -37,10 +42,10 @@ public class Spell : Cast
 
     public override Quaternion determineRotation()
     {
-        Transform playerTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        Transform cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
 
         // Calculate the spawn position around the player
-        Quaternion rotation = Quaternion.LookRotation(playerTransform.forward);
+        Quaternion rotation = Quaternion.LookRotation(cameraTransform.forward);
 
         return rotation;
     }
