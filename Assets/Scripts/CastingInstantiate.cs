@@ -22,7 +22,7 @@ public class CastingInstantiate : MonoBehaviour
             if (counter > cast.GetComponent<Cast>().castingTime)
             {
                 counter = 0;
-                Instantiate(cast, cast.GetComponent<Cast>().determineSpawn(), Quaternion.identity);
+                Instantiate(cast, cast.GetComponent<Cast>().determineSpawn(), cast.GetComponent<Cast>().determineRotation());
             }
         }
         else

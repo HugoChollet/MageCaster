@@ -34,4 +34,15 @@ public class Spell : Cast
 
         return spawnPosition;
     }
+
+    public override Quaternion determineRotation()
+    {
+        Transform playerTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
+
+        // Calculate the spawn position around the player
+        Quaternion rotation = Quaternion.LookRotation(playerTransform.forward);
+
+        return rotation;
+    }
+
 }
