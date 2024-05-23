@@ -23,7 +23,7 @@ public class Spell : Cast
         GetComponent<Renderer>().material = element.materialElement;
     }
 
-    public override Vector3 determineSpawn()
+    public override Vector3 DetermineSpawn()
     {
         Transform playerTransform = GameObject.FindGameObjectWithTag("CastingSpawn").transform;
         Transform cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
@@ -40,7 +40,7 @@ public class Spell : Cast
         return spawnPosition;
     }
 
-    public override Quaternion determineRotation()
+    public override Quaternion DetermineRotation()
     {
         Transform cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
 

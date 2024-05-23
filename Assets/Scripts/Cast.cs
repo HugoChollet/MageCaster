@@ -8,12 +8,12 @@ public class Cast : MonoBehaviour
     public float lifetime = 5;
     public int manaCost = 0;
 
-    public virtual Vector3 determineSpawn()
+    public virtual Vector3 DetermineSpawn()
     {
         return transform.position;
     }
 
-    public virtual Quaternion determineRotation()
+    public virtual Quaternion DetermineRotation()
     {
         return transform.rotation;
     }

@@ -10,10 +10,10 @@ public class CastingInstantiate : MonoBehaviour
 
     private void Update()
     {
-        InstantiateCasting();
+        CastingInput();
     }
 
-    private void InstantiateCasting()
+    private void CastingInput()
     {
         if (Keyboard.current.FindKeyOnCurrentKeyboardLayout(castKey.ToString()).isPressed)
         {
@@ -22,13 +22,19 @@ public class CastingInstantiate : MonoBehaviour
             if (counter > cast.GetComponent<Cast>().castingTime)
             {
                 counter = 0;
-                Instantiate(cast, cast.GetComponent<Cast>().determineSpawn(), cast.GetComponent<Cast>().determineRotation());
+                CastInstantiate();
             }
         }
         else
         {
             counter = 0;
         }
+    }
+
+    private void CastInstantiate()
+    {
+        Instantiate(cast, cast.GetComponent<Cast>().DetermineSpawn(), cast.GetComponent<Cast>().DetermineRotation());
+
     }
 
 
