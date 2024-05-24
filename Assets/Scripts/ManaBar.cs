@@ -1,24 +1,9 @@
-using UnityEngine.UI;
 
-public class ManaBar : Bar
+public class ManaBar : StatusBar
 {
-    Slider slider;
-    PlayerStatus playerStatus;
-    void Start()
+    public override void InitStatus()
     {
-        slider = GetComponentInChildren<Slider>();
-        playerStatus = GetComponent<PlayerStatus>();
         slider.maxValue = playerStatus.maxMana;
         slider.value = playerStatus.currentMana;
-    }
-
-    public void UpdateBarValue(float mana)
-    {
-        slider.value = mana;
-    }
-
-    public void UpdateBarMax(float max)
-    {
-        slider.maxValue = max;
     }
 }
