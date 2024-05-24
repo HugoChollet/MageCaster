@@ -52,5 +52,10 @@
     "Temp/": true
   },
   "dotnet.defaultSolution": "MageCaster.sln",
-  "cSpell.words": ["azerty", "Behaviour"]
+  "cSpell.words": [
+    "azerty",
+    "Behaviour",
+    "Cooldown",
+    "Regen"
+  ]
 }

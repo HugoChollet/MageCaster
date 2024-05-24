@@ -121,7 +121,7 @@ MonoBehaviour:
   quality: 100
   castingTime: 1
   lifetime: 5
-  manaCost: 0
+  manaCost: 10
   element: {fileID: 4612387892239302211, guid: 497af0d5a74a246d7913a1a7e791aaf5, type: 3}
   speed: 0
   distance: 1

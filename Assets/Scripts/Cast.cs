@@ -6,7 +6,7 @@ public class Cast : MonoBehaviour
     public float quality = 100;
     public float castingTime = 0;
     public float lifetime = 5;
-    public int manaCost = 0;
+    public float manaCost = 0;
 
     public virtual Vector3 DetermineSpawn()
     {
