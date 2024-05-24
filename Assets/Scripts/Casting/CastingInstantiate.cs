@@ -34,7 +34,7 @@ public class CastingInstantiate : MonoBehaviour
     private void CastInstantiate()
     {
         Instantiate(cast, cast.GetComponent<Cast>().DetermineSpawn(), cast.GetComponent<Cast>().DetermineRotation());
-        GetComponentInParent<PlayerStatus>().UseMana(cast.GetComponent<Cast>().manaCost);
+        GetComponentInParent<PlayerStatus>().manaStatus.UseStatus(cast.GetComponent<Cast>().manaCost);
     }
 
 
