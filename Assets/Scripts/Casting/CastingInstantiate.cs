@@ -5,10 +5,16 @@ public class CastingInstantiate : MonoBehaviour
 {
     public Key castKey = Key.A;
     public GameObject cast;
+    private PlayerStatus playerStatus;
 
     float counter = 0;
 
-    private void Update()
+    void Start()
+    {
+        playerStatus = GetComponentInParent<PlayerStatus>();
+    }
+
+    void Update()
     {
         CastingInput();
     }
@@ -34,7 +40,7 @@ public class CastingInstantiate : MonoBehaviour
     private void CastInstantiate()
     {
         Instantiate(cast, cast.GetComponent<Cast>().DetermineSpawn(), cast.GetComponent<Cast>().DetermineRotation());
-        GetComponentInParent<PlayerStatus>().manaStatus.UseStatus(cast.GetComponent<Cast>().manaCost);
+        playerStatus.manaStatus.UseStatus(cast.GetComponent<Cast>().manaCost);
     }
 
 

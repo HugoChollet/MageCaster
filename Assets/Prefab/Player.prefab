@@ -124,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5241267463746980526, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_Name
-      value: Caster
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5269945355364510514, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: canRun
@@ -140,6 +140,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5241267463746980526, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8136499865447159013}
+    - targetCorrespondingSourceObject: {fileID: 5241267463746980526, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3559196635727995606}
   m_SourcePrefab: {fileID: 100100000, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
 --- !u!1 &2163237610194098934 stripped
 GameObject:
@@ -160,6 +163,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpStrength: 6
   groundCheck: {fileID: 2275966877354853366}
+--- !u!114 &3559196635727995606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163237610194098934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a615228f25b4864bd2585235683f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaStatus: {fileID: -348879250912346948, guid: eaf1561ffd9a141a5b11133acb225401, type: 3}
+  healthStatus: {fileID: 5685845076654208324, guid: 2c579164478a34d38ba2b07801a95189, type: 3}
 --- !u!4 &2165636302079508830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5238820401998598406, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}

@@ -7,17 +7,20 @@ public class StatusBar : MonoBehaviour
 {
 
     protected Slider slider;
-    protected PlayerStatus playerStatus;
+    protected Status status;
     void Start()
     {
         slider = GetComponentInChildren<Slider>();
-        playerStatus = GetComponent<PlayerStatus>();
         InitStatus();
+        InitCommonStatus();
     }
 
-    public virtual void InitStatus()
+    public virtual void InitStatus() { }
+
+    public void InitCommonStatus()
     {
-        return;
+        slider.maxValue = status.maxStatus;
+        slider.value = status.currentStatus;
     }
 
     public void UpdateBarValue(float status)

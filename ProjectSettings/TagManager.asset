@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Element
   - CastingSpawn
+  - ManaBar
+  - HealthBar
   layers:
   - Default
   - TransparentFX
