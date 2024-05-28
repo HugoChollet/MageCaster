@@ -1,7 +1,12 @@
 public class HealthStatus : Status
 {
-    public override void InitStatus()
+    public StatusBar healthBarInstance;
+
+    public override void UpdateStatusBarValue(float status)
     {
-        statusBarInstance = FindObjectOfType<HealthBar>();
+        if (healthBarInstance != null)
+        {
+            healthBarInstance.UpdateBarValue(status);
+        }
     }
 }

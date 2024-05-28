@@ -6,7 +6,6 @@ public class Status : MonoBehaviour
     public float statusCooldown = 1;
     public float statusRegen = 0.001f;
     public float currentStatus;
-    public static StatusBar statusBarInstance;
     private float statusCounter = 0;
 
     void Start()
@@ -14,7 +13,11 @@ public class Status : MonoBehaviour
         InitStatus();
     }
 
-    public virtual void InitStatus() { }
+    public virtual void InitStatus()
+    {
+        currentStatus = maxStatus;
+        UpdateStatusBarValue(currentStatus);
+    }
 
     public bool UseStatus(float cost)
     {
@@ -46,11 +49,5 @@ public class Status : MonoBehaviour
         }
     }
 
-    void UpdateStatusBarValue(float status)
-    {
-        if (statusBarInstance != null)
-        {
-            statusBarInstance.UpdateBarValue(status);
-        }
-    }
+    public virtual void UpdateStatusBarValue(float status) { }
 }

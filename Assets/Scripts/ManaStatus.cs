@@ -1,7 +1,14 @@
+using UnityEngine;
+
 public class ManaStatus : Status
 {
-    public override void InitStatus()
+    public StatusBar manaBarInstance;
+
+    public override void UpdateStatusBarValue(float status)
     {
-        statusBarInstance = FindObjectOfType<ManaBar>();
+        if (manaBarInstance != null)
+        {
+            manaBarInstance.UpdateBarValue(status);
+        }
     }
 }

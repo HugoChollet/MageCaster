@@ -46,5 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxStatus: 100
   statusCooldown: 1
-  statusRegen: 0.001
-  currentStatus: 0
+  statusRegen: 0.01
+  currentStatus: 100
+  manaBarInstance: {fileID: 0}
