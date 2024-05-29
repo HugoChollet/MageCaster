@@ -3,26 +3,31 @@ using UnityEngine;
 public class MagicGrid : MonoBehaviour
 {
     public Cast[] magics;
-    public GameObject cell;
+    public GameObject cellGameObject;
 
     public int selectedCell = 1;
     public int maxCells = 3;
 
     private int startPositionX = 150;
     private int nextPositionX = 90;
+    private GameObject[] cells;
 
     void Start()
     {
-        foreach (Cast magic in magics)
+        cells = new GameObject[maxCells]; // Initialize cells as an array of GameObjects with a capacity equal to maxCells.
+        for (int i = 0; i < magics.Length; i++)
         {
-            InstantiateMagicCell(magic, startPositionX);
+            InstantiateMagicCell(magics[i], startPositionX, i);
             startPositionX += nextPositionX;
         }
+
     }
 
-    void InstantiateMagicCell(Cast magic, int posX)
+    void InstantiateMagicCell(Cast magic, int posX, int index)
     {
-        GameObject newMagic = Instantiate(cell, new Vector3(posX, 50, 0), Quaternion.identity, transform);
-        newMagic.GetComponent<MagicCell>().cast = magic;
+        GameObject newMagic = Instantiate(cellGameObject, new Vector3(posX, 50, 0), Quaternion.identity, transform);
+
+        cells[index] = newMagic;
+        cells[index].GetComponent<MagicCell>().cast = magic;
     }
 }
