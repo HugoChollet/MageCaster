@@ -8,7 +8,7 @@ public enum Direction
     backward,
 }
 
-public class Spell : Cast
+public class Spell : Magic
 {
     public Element element; // Element Object like Fire, water...
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class Cast : MonoBehaviour
+public class Magic : MonoBehaviour
 {
     public float quality = 100;
     public float castingTime = 0;

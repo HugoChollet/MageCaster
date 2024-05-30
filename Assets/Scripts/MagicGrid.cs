@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MagicGrid : MonoBehaviour
 {
-    public Cast[] magics;
+    public Magic[] magics;
     public GameObject cellGameObject;
 
     public int selectedCell = 1;
@@ -23,11 +24,12 @@ public class MagicGrid : MonoBehaviour
 
     }
 
-    void InstantiateMagicCell(Cast magic, int posX, int index)
+    void InstantiateMagicCell(Magic magic, int posX, int index)
     {
         GameObject newMagic = Instantiate(cellGameObject, new Vector3(posX, 50, 0), Quaternion.identity, transform);
 
         cells[index] = newMagic;
-        cells[index].GetComponent<MagicCell>().cast = magic;
+        cells[index].GetComponent<MagicCell>().magic = magic;
+        cells[index].GetComponentInChildren<Text>().text = magic.name;
     }
 }

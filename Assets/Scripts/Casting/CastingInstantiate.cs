@@ -23,9 +23,8 @@ public class CastingInstantiate : MonoBehaviour
     {
         if (Keyboard.current.FindKeyOnCurrentKeyboardLayout(castKey.ToString()).isPressed)
         {
-            // Debug.Log(Input.inputString + " key was pressed.");
             counter += Time.deltaTime;
-            if (counter > cast.GetComponent<Cast>().castingTime)
+            if (counter > cast.GetComponent<Magic>().castingTime)
             {
                 counter = 0;
                 CastInstantiate();
@@ -39,9 +38,9 @@ public class CastingInstantiate : MonoBehaviour
 
     private void CastInstantiate()
     {
-        if (playerStatus.manaStatus.UseStatus(cast.GetComponent<Cast>().manaCost))
+        if (playerStatus.manaStatus.UseStatus(cast.GetComponent<Magic>().manaCost))
         {
-            Instantiate(cast, cast.GetComponent<Cast>().DetermineSpawn(), cast.GetComponent<Cast>().DetermineRotation());
+            Instantiate(cast, cast.GetComponent<Magic>().DetermineSpawn(), cast.GetComponent<Magic>().DetermineRotation());
         }
     }
 

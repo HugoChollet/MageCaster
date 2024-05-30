@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MagicCell : MonoBehaviour
 {
-    public Cast cast;
+    public Magic magic;
     public Boolean selected = true;
 
     void Start()
