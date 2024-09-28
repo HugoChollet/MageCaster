@@ -49,6 +49,4 @@ public class CastingInstantiate : MonoBehaviour
             Instantiate(magicObject, posMagic, rotMagic);
         }
     }
-
-
 }

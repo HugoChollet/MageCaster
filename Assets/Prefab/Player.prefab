@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2315741904498716942}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.5, z: 0}
+  m_LocalPosition: {x: -0, y: 2.85, z: 0}
   m_LocalScale: {x: 0.8434548, y: 0.8434548, z: 0.8434548}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castKey: 15
-  cast: {fileID: 3904506897044201125, guid: 3021edda0f44645ee8089192387d75fe, type: 3}
+  magicGrid: {fileID: 0}
 --- !u!1001 &6249278674048241752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,7 +120,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5239100585477912294, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 2.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239139276810530380, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.41876
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239139276810530380, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.77
       objectReference: {fileID: 0}
     - target: {fileID: 5241267463746980526, guid: f2e0b7ae4dae8cf44955bccd3512b213, type: 3}
       propertyPath: m_Icon

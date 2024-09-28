@@ -58,7 +58,7 @@ public class MagicGrid : MonoBehaviour
 
     public void SetSelectedMagics()
     {
-        for (int i = 0; 0 < cells.Length; i++)
+        for (int i = 0; i < cells.Length; i++)
         {
             cells[i].GetComponent<MagicCell>().selected = i == roundDownSelectCell;
             cells[i].GetComponent<MagicCell>().UpdateHighLight();
