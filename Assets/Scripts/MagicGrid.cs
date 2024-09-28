@@ -49,7 +49,6 @@ public class MagicGrid : MonoBehaviour
         selectedCell += Input.mouseScrollDelta.y;
         roundDownSelectCell = Math.Abs((int)(selectedCell % cells.Length));
 
-        Debug.Log(roundDownSelectCell);
         if (oldSelect != roundDownSelectCell)
         {
             SetSelectedMagics();

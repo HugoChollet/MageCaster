@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using MapMagic.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -38,9 +40,13 @@ public class CastingInstantiate : MonoBehaviour
 
     private void CastInstantiate()
     {
+        GameObject magicObject = magicGrid.GetSelectedMagic().gameObject;
+        Vector3 posMagic = magicGrid.GetSelectedMagic().DetermineSpawn();
+        Quaternion rotMagic = magicGrid.GetSelectedMagic().DetermineRotation();
+
         if (playerStatus.manaStatus.UseStatus(magicGrid.GetSelectedMagic().manaCost))
         {
-            Instantiate(magicGrid.GetSelectedMagic(), magicGrid.GetSelectedMagic().DetermineSpawn(), magicGrid.GetComponent<Magic>().DetermineRotation());
+            Instantiate(magicObject, posMagic, rotMagic);
         }
     }
 
