@@ -57,6 +57,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5641060359389559984}
     m_Modifications:
+    - target: {fileID: 1727775310483699403, guid: 768aea999307f40edb5404bb2a8ade2a, type: 3}
+      propertyPath: m_Text
+      value: ' 1 water ball'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727775310483699403, guid: 768aea999307f40edb5404bb2a8ade2a, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727775310483699403, guid: 768aea999307f40edb5404bb2a8ade2a, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1727775310483761841, guid: 768aea999307f40edb5404bb2a8ade2a, type: 3}
       propertyPath: m_Interactable
       value: 1

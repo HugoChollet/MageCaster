@@ -34,7 +34,8 @@ public class MagicGrid : MonoBehaviour
 
         cells[index] = newMagic;
         cells[index].GetComponent<MagicCell>().magic = magic;
-        cells[index].GetComponentInChildren<Text>().text = magic.name;
+        cells[index].GetComponent<MagicCell>().spellName = magic.name;
+        cells[index].GetComponent<MagicCell>().position = index;
     }
 
     void FixedUpdate()

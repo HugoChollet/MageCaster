@@ -1,12 +1,12 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MagicCell : MonoBehaviour
 {
     public Magic magic;
+    public string spellName;
+    public int position;
     public bool selected = false;
 
     void Start()
@@ -22,6 +22,6 @@ public class MagicCell : MonoBehaviour
 
     public void UpdateHighLight()
     {
-        GetComponentInChildren<Text>().text = selected ? "!" : magic.name;
+        GetComponentInChildren<Text>().text = selected ? spellName : position.ToString() + "  " + spellName;
     }
 }
