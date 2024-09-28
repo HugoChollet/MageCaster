@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MagicCell : MonoBehaviour
 {
     public Magic magic;
-    public Boolean selected = true;
+    public bool selected = false;
 
     void Start()
     {
@@ -17,5 +18,10 @@ public class MagicCell : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void UpdateHighLight()
+    {
+        GetComponentInChildren<Text>().text = selected ? "!" : magic.name;
     }
 }

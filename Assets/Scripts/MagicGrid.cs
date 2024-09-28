@@ -1,27 +1,31 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using System;
+using Unity.VisualScripting;
 
 public class MagicGrid : MonoBehaviour
 {
     public Magic[] magics;
     public GameObject cellGameObject;
 
-    public int selectedCell = 1;
+    public float selectedCell = 0;
+    private int roundDownSelectCell = 0;
     public int maxCells = 3;
 
-    private int startPositionX = 150;
-    private int nextPositionX = 90;
+    private int startScreenPositionX = 150;
+    private int nextScreenPositionX = 90;
     private GameObject[] cells;
 
     void Start()
     {
-        cells = new GameObject[maxCells]; // Initialize cells as an array of GameObjects with a capacity equal to maxCells.
+        cells = new GameObject[magics.Length]; // Initialize cells as an array of GameObjects with a capacity equal to maxCells.
         for (int i = 0; i < magics.Length; i++)
         {
-            InstantiateMagicCell(magics[i], startPositionX, i);
-            startPositionX += nextPositionX;
+            InstantiateMagicCell(magics[i], startScreenPositionX, i);
+            startScreenPositionX += nextScreenPositionX;
         }
-
+        cells[roundDownSelectCell].GetComponentInChildren<Button>().Select();
     }
 
     void InstantiateMagicCell(Magic magic, int posX, int index)
@@ -31,5 +35,39 @@ public class MagicGrid : MonoBehaviour
         cells[index] = newMagic;
         cells[index].GetComponent<MagicCell>().magic = magic;
         cells[index].GetComponentInChildren<Text>().text = magic.name;
+    }
+
+    void FixedUpdate()
+    {
+        UpdateOnChangeSelect();
+    }
+
+    void UpdateOnChangeSelect()
+    {
+        int oldSelect = roundDownSelectCell;
+
+        selectedCell += Input.mouseScrollDelta.y;
+        roundDownSelectCell = Math.Abs((int)(selectedCell % cells.Length));
+
+        Debug.Log(roundDownSelectCell);
+        if (oldSelect != roundDownSelectCell)
+        {
+            SetSelectedMagics();
+        }
+    }
+
+
+    public void SetSelectedMagics()
+    {
+        for (int i = 0; 0 < cells.Length; i++)
+        {
+            cells[i].GetComponent<MagicCell>().selected = i == roundDownSelectCell;
+            cells[i].GetComponent<MagicCell>().UpdateHighLight();
+        }
+    }
+
+    public Magic GetSelectedMagic()
+    {
+        return magics[roundDownSelectCell].GetComponent<Magic>();
     }
 }

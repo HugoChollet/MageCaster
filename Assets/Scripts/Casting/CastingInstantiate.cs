@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class CastingInstantiate : MonoBehaviour
 {
     public Key castKey = Key.A;
-    public GameObject cast;
+    public MagicGrid magicGrid;
     private PlayerStatus playerStatus;
 
     float counter = 0;
@@ -24,7 +24,7 @@ public class CastingInstantiate : MonoBehaviour
         if (Keyboard.current.FindKeyOnCurrentKeyboardLayout(castKey.ToString()).isPressed)
         {
             counter += Time.deltaTime;
-            if (counter > cast.GetComponent<Magic>().castingTime)
+            if (counter > magicGrid.GetSelectedMagic().castingTime)
             {
                 counter = 0;
                 CastInstantiate();
@@ -38,9 +38,9 @@ public class CastingInstantiate : MonoBehaviour
 
     private void CastInstantiate()
     {
-        if (playerStatus.manaStatus.UseStatus(cast.GetComponent<Magic>().manaCost))
+        if (playerStatus.manaStatus.UseStatus(magicGrid.GetSelectedMagic().manaCost))
         {
-            Instantiate(cast, cast.GetComponent<Magic>().DetermineSpawn(), cast.GetComponent<Magic>().DetermineRotation());
+            Instantiate(magicGrid.GetSelectedMagic(), magicGrid.GetSelectedMagic().DetermineSpawn(), magicGrid.GetComponent<Magic>().DetermineRotation());
         }
     }
 

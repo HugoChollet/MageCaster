@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magics: []
-  cell: {fileID: 4576026366740857155}
+  cellGameObject: {fileID: 0}
   selectedCell: 0
   maxCells: 3
 --- !u!1001 &2839126431260255250
@@ -57,6 +57,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5641060359389559984}
     m_Modifications:
+    - target: {fileID: 1727775310483761841, guid: 768aea999307f40edb5404bb2a8ade2a, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1794638058341639505, guid: 768aea999307f40edb5404bb2a8ade2a, type: 3}
       propertyPath: m_Name
       value: MagicCell
@@ -109,10 +113,5 @@ PrefabInstance:
 --- !u!4 &2102701366201680615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4199837218826528501, guid: 768aea999307f40edb5404bb2a8ade2a, type: 3}
-  m_PrefabInstance: {fileID: 2839126431260255250}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4576026366740857155 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1794638058341639505, guid: 768aea999307f40edb5404bb2a8ade2a, type: 3}
   m_PrefabInstance: {fileID: 2839126431260255250}
   m_PrefabAsset: {fileID: 0}
