@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +7,9 @@ public class MagicCell : MonoBehaviour
     public string spellName;
     public int position;
     public bool selected = false;
+
+    public Sprite hoverSprite;
+    public Sprite idleSprite;
 
     void Start()
     {
@@ -22,6 +24,15 @@ public class MagicCell : MonoBehaviour
 
     public void UpdateHighLight()
     {
-        GetComponentInChildren<Text>().text = selected ? spellName : position.ToString() + "  " + spellName;
+        if (selected)
+        {
+            GetComponentInChildren<Image>().sprite = hoverSprite;
+            GetComponentInChildren<Text>().text = spellName;
+        }
+        else
+        {
+            GetComponentInChildren<Image>().sprite = idleSprite;
+            GetComponentInChildren<Text>().text = position.ToString() + "  " + spellName;
+        }
     }
 }

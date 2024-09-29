@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using MapMagic.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
